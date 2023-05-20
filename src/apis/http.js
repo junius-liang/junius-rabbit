@@ -1,7 +1,9 @@
 //对axios的基础封装
 import axios from "axios";
+const weburi = "http://pcapi-xiaotuxian-front-devtest.itheima.net"
+const localuri = "http://localhost:88"
 const httpInstant = axios.create({
-    baseURL:"http://pcapi-xiaotuxian-front-devtest.itheima.net",
+    baseURL:weburi,
     timeout:5000
 })
 // 添加请求拦截器
