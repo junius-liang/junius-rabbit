@@ -1,15 +1,8 @@
 <script setup>
-import {getAllCategory} from "@/apis/Layout";
-import {onMounted, ref} from "vue";
+import {useCategoryStore} from "@/stores/category";
 //获取渲染列表数据
-const categoryList = ref([])
-const getallcategory = async ()=>{
-  const res = await getAllCategory()
-  categoryList.value=res.data.result
-}
-onMounted(()=>{
-  getallcategory()
-})
+const categoryList = useCategoryStore().categoryListStore
+
 </script>
 
 <template>
@@ -51,7 +44,7 @@ onMounted(()=>{
       height: 132px;
       width: 100%;
       text-indent: -9999px;
-      background: url('@/assets/images/logo.png') no-repeat center 18px / contain;
+      background: url('../../../assets/images/logo.png') no-repeat center 18px / contain;
     }
   }
 
