@@ -2,6 +2,7 @@ package com.rabbit.server.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.rabbit.mapper.BannerMapper;
 import com.rabbit.model.APIModel;
 import com.rabbit.model.BannerItem;
@@ -21,7 +22,7 @@ import java.util.function.Function;
  * @project rabbit-server
  **/
 @Service
-public class BannerServiceImpl implements BannerService{
+public class BannerServiceImpl extends ServiceImpl<BannerMapper,BannerItem> implements BannerService{
     @Resource
     private BannerMapper bannerMapper;
     @Override

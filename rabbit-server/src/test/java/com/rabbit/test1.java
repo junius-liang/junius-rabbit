@@ -8,6 +8,7 @@ import com.rabbit.mapper.GoodMapper;
 import com.rabbit.model.BannerItem;
 import com.rabbit.model.Category;
 import com.rabbit.model.Good;
+import com.rabbit.server.BannerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -29,6 +30,8 @@ public class test1 {
     private CategoryMapper categoryMapper;
     @Resource
     private BannerMapper bannerMapper;
+    @Resource
+    private BannerService bannerService;
 
     @Test
     void test() {
@@ -112,6 +115,14 @@ public class test1 {
         bannerItem.setId("001");
         bannerItem.setImgUrl("jidsjdisjid");
         int insert = bannerMapper.insert(bannerItem);
+    }
+
+    @Test
+    void test6(){
+        for (BannerItem bannerItem : bannerService.list()) {
+            Console.log(bannerItem);
+        }
+
     }
 
 }
