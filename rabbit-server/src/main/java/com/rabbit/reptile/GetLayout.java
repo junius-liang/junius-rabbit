@@ -26,7 +26,7 @@ public class GetLayout {
     @Resource
     private GoodMapper goodMapper;
 
-    static final String URL = "http://pcapi-xiaotuxian-front-devtest.itheima.net";
+    static String URL = Constant.URL;
     static String path = "/home/category/head";
     static List<Category> list = new ArrayList<>();
     static List<Category> list2 = new ArrayList<>();

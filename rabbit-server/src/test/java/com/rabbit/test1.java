@@ -2,8 +2,10 @@ package com.rabbit;
 
 import cn.hutool.core.lang.Console;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.rabbit.mapper.BannerMapper;
 import com.rabbit.mapper.CategoryMapper;
 import com.rabbit.mapper.GoodMapper;
+import com.rabbit.model.BannerItem;
 import com.rabbit.model.Category;
 import com.rabbit.model.Good;
 import org.junit.jupiter.api.Test;
@@ -25,6 +27,8 @@ public class test1 {
     private GoodMapper goodMapper;
     @Resource
     private CategoryMapper categoryMapper;
+    @Resource
+    private BannerMapper bannerMapper;
 
     @Test
     void test() {
@@ -98,6 +102,16 @@ public class test1 {
         goodQueryWrapper.eq("categoryId", "1013001");
         List<Good> goods = goodMapper.selectList(goodQueryWrapper);
         Console.log(goods);
+    }
+
+    @Test
+    public void test5(){
+        BannerItem bannerItem = new BannerItem();
+        bannerItem.setHrefUrl("123");
+        bannerItem.setType("1");
+        bannerItem.setId("001");
+        bannerItem.setImgUrl("jidsjdisjid");
+        int insert = bannerMapper.insert(bannerItem);
     }
 
 }
